@@ -1,0 +1,7 @@
+@font-face { font-family: "Body"; src: url("fonts/PTSerif-Regular.ttf"); }
+
+@page { size: A4; margin: 20mm 20mm 20mm 25mm; }
+body { font-family: "Body", "PT Serif", "DejaVu Serif", serif; font-size: 12pt; line-height: 1.4; }
+.to { margin-left: 45%; margin-bottom: 18mm; }
+h1 { text-align: center; font-size: 14pt; margin: 10mm 0; }
+.sign { margin-top: 20mm; display: flex; justify-content: space-between; }

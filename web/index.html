@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Отзыв согласия на обработку персональных данных</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.10/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.10/vfs_fonts.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Отзыв<span>.данных</span></a>
+    <nav>
+      <a href="#how">Как это работает</a>
+      <a href="#privacy">Конфиденциальность</a>
+      <a href="#form">Заявление</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <div class="wrap">
+    <!-- <span class="eyebrow">ст. 9 152-ФЗ</span> -->
+    <h1>Отзовите согласие на обработку персональных данных</h1>
+    <p class="lead">Выберите одну или несколько компаний, заполните свои данные и получите готовые заявления в PDF. Подходит для работодателей, сервисов и платформ, где вы когда-то оставили резюме или анкету.</p>
+    <a class="btn" href="#form">Составить заявления</a>
+    <p class="hero-note">Документы формируются в вашем браузере без отправки на сервер.</p>
+  </div>
+</div>
+
+<section id="how" class="alt">
+  <div class="wrap">
+    <h2>Как это работает</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="num">1</div>
+        <h3>Выберите компании</h3>
+        <p>Отметьте одну или несколько компаний по названию или ИНН. Если нужной нет в списке, введите реквизиты вручную.</p>
+      </div>
+      <div class="card">
+        <div class="num">2</div>
+        <h3>Заполните свои данные</h3>
+        <p>ФИО, адрес для ответа и то, как оператор может вас найти: e-mail или телефон, которые вы использовали.</p>
+      </div>
+      <div class="card">
+        <div class="num">3</div>
+        <h3>Скачайте или отправьте себе</h3>
+        <p>Заявление для каждой компании. Файлы можно сохранить или отправить себе на почту через системное меню «Поделиться».</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <h2>Что входит в заявление</h2>
+      <ul class="checklist">
+        <li>Прекращение обработки персональных данных (ч. 5.1 ст. 21)</li>
+        <li>Уничтожение данных у оператора и его подрядчиков (ч. 5 ст. 21)</li>
+        <li>Сведения о составе данных, источниках и передаче третьим лицам (ч. 7 ст. 14)</li>
+        <li>Подтверждение уничтожения по приказу Роскомнадзора № 179</li>
+      </ul>
+    </div>
+    <div class="privacy" id="privacy">
+      <h3>Ваши данные не используются</h3>
+      <p>Заявления собираются прямо в браузере. Ваши данные не передаются на сервер и нигде не сохраняются.</p>
+    </div>
+  </div>
+</section>
+
+<section id="form" class="alt">
+  <div class="wrap">
+    <h2>Составить заявления</h2>
+    <div class="form-card">
+
+      <div class="step">
+        <h3><span class="n">1</span>Операторы персональных данных</h3>
+        <label for="q">Название компании или ИНН</label>
+        <input id="q" type="text" autocomplete="off" placeholder="например, hh.ru или Сбер">
+        <div id="results" class="results hidden"></div>
+        <p id="notfound" class="hidden">Компании нет в списке. <button type="button" class="link" id="manualBtn">Ввести реквизиты вручную</button></p>
+
+        <div id="manual" class="hidden">
+          <label for="m_inn">ИНН <span class="hint">10 цифр. Реквизиты можно подтянуть из DaData</span></label>
+          <div class="row">
+            <input id="m_inn" inputmode="numeric" maxlength="10">
+            <button type="button" class="ghost-sm" id="lookupBtn">Найти по ИНН</button>
+          </div>
+          <label for="m_name">Наименование юрлица *</label>
+          <input id="m_name" placeholder="ООО «Пример»">
+          <label for="m_addr">Юридический адрес *</label>
+          <input id="m_addr">
+          <label for="m_dpo">E-mail ответственного за обработку ПД <span class="hint">если известен</span></label>
+          <input id="m_dpo" type="email">
+          <label for="m_slug">Короткое название для файла <span class="hint">латиницей, например Example</span></label>
+          <input id="m_slug">
+          <div id="manualNote" class="box warn hidden"></div>
+          <div style="margin-top: .8rem"><button type="button" class="btn ghost" id="addManualBtn">Добавить в список</button></div>
+        </div>
+
+        <div id="chips" class="chips"></div>
+        <p id="count" class="count hidden"></p>
+      </div>
+
+      <div class="step">
+        <h3><span class="n">2</span>Вы</h3>
+        <label for="full_name">ФИО</label>
+        <input id="full_name" autocomplete="name" placeholder="Иванов Иван Иванович">
+        <!-- <label for="full_name_gen">ФИО в родительном падеже <span class="hint">например: от Иванова Ивана Ивановича. Нужно для текста заявления</span></label> -->
+        <!-- <input id="full_name_gen"> -->
+        <label for="short_name">Подпись <span class="hint">например: Иванов И.И.</span></label>
+        <input id="short_name">
+        <label for="address">Адрес для ответа *</label>
+        <input id="address" autocomplete="street-address">
+        <div class="grid2">
+          <div>
+            <label for="email">E-mail <span class="hint">нужен для отправки себе</span></label>
+            <input id="email" type="email" autocomplete="email">
+          </div>
+          <div>
+            <label for="phone">Телефон<span class="hint">нужен для идентификации</span></label>
+            <input id="phone" type="tel" autocomplete="tel">
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <h3><span class="n">3</span>Требования к оператору</h3>
+        <div class="checks">
+          <label><input type="checkbox" id="demand_stop" checked>
+            <span>Прекратить обработку<small>срок 10 рабочих дней, ч. 5.1 ст. 21</small></span></label>
+          <label><input type="checkbox" id="demand_destroy" checked>
+            <span>Уничтожить данные<small>срок 30 дней, ч. 5 ст. 21, включая данные у подрядчиков</small></span></label>
+          <label><input type="checkbox" id="demand_info" checked>
+            <span>Сообщить состав данных, источники и третьих лиц<small>ч. 7 ст. 14</small></span></label>
+          <label><input type="checkbox" id="demand_confirmation" checked>
+            <span>Подтвердить уничтожение<small>Приказ Роскомнадзора от 28.10.2022 № 179</small></span></label>
+          <label><input type="checkbox" id="reply_by_email" checked>
+            <span>Ответить на e-mail, если он указан</span></label>
+        </div>
+      </div>
+
+      <div class="submit-row">
+        <div class="buttons">
+          <button type="button" class="btn" id="downloadBtn">Скачать</button>
+          <button type="button" class="btn ghost" id="sendBtn">Отправить себе на почту</button>
+        </div>
+        <div id="status" class="box ok hidden"></div>
+        <div id="error" class="error"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Сервис помогает составить заявление по форме, предусмотренной 152-ФЗ. Мы не храним и не обрабатываем персональные данные.</p>
+  </div>
+</footer>
+
+<script src="/static/app.js" defer></script>
+</body>
+</html>

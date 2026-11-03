@@ -1,0 +1,216 @@
+# Реестр компаний. Заполнено частично; ВСЁ проверить по ЕГРЮЛ, затем status: verified + checked_at.
+# Поля: inn, name (с формой), slug [a-z0-9-], address, aliases, revoke_article (страница политики), revoke_email, web_site, status, checked_at (дата сверки с ЕГРЮЛ)
+# --- HR / рекрутинг ---
+
+- inn: "7718620740"
+  name: "ООО «Хэдхантер»"
+  slug: "hh"
+  address: "125047, г. Москва, муниципальный округ Тверской, ул. 2-я Брестская, д. 48, помещ. 25"
+  aliases: ["hh", "hh.ru", "хэдхантер", "headhunter", "хх"]
+  revoke_article: "https://hh.ru/article/personal_data"
+  revoke_email:
+  web_site: "https://hh.ru"
+  status: "verified"
+  checked_at: '2026-11-01'
+
+- inn: "7702319337"
+  name: "ООО «СуперДжоб»"
+  slug: "superjob"
+  address: "127006, город Москва, улица Дмитровка М., дом 20, эт. 3, пом. I, к 4-36 Г"
+  aliases: ["superjob", "sj", "superjob.ru", "суперджоб"]
+  revoke_article: "https://www.superjob.ru/info/privacy_agreement_1.html"
+  revoke_email:
+  web_site: "https://superjob.ru"
+  status: "verified"
+  checked_at: '2026-11-01'
+
+- inn: "7709969870"
+  name: "ООО «РДВ-софт»"
+  slug: "rabota-ru"
+  address: "г. Москва, вн.тер.г. муниципальный округ Таганский, Малый Дровяной пер., д. 3 стр. 1, помещ. II, комн.32"
+  aliases: ["rabota.ru", "работа.ру", "РДВ-Софт", "Работа"]
+  revoke_article: "https://www.rabota.ru/info/#user_data_ugreement"
+  revoke_email:
+  web_site: https://www.rabota.ru
+  status: "verified"
+  checked_at: '2026-11-01'
+
+- inn: "9715317940"
+  name: "ООО «Хантфлоу»"
+  slug: "huntflow"
+  address: 127254, г. Москва, Бутырский р-н, Огородный проезд, д. 16/1 стр 6, помещ. 701
+  aliases: ["huntflow", "хантфлоу"]
+  revoke_article:
+  revoke_email:
+  web_site: https://huntflow.ru/about
+  status: "verified"
+  checked_at: '2026-11-01'
+
+# --- Корпоративные мессенджеры ---
+# Пачка: для данных в пространствах компаний оператор — работодатель (лицензиат), Примавера лишь обработчик (политика, п. 7.1). revoke_email — только для собственной обработки Примаверы (п. 7.2)
+- inn: "7842383501"
+  name: "ООО «Примавера»"
+  slug: "pachca"
+  address: "191015, г. Санкт-Петербург, Центральный р-н, ул. Таврическая, д. 27, кв. 55"
+  aliases: ["пачка", "pachca", "примавера", "primavera"]
+  revoke_article:
+  revoke_email: "dp@pachca.com"
+  web_site: "https://pachca.com/"
+  status: "verified"
+  checked_at: '2026-11-01'
+
+# --- Яндекс (группа) ---
+- inn: "7736207543"
+  name: "ООО «Яндекс»"
+  slug: "yandex"
+  address: "119021, г. Москва, р-н. Хамовники, ул. Льва Толстого, д. 16"
+  aliases: ["яндекс", "yandex", "яндекс id", "яндекс 360"]
+  revoke_article: https://yandex.ru/legal/confidential/ru/
+  revoke_email: "personal-data@yandex-team.ru"
+  web_site: https://yandex.ru
+  status: "verified"
+  checked_at: '2026-11-01'
+
+- inn: "7704458262"
+  name: "ООО «Яндекс.Облако»"
+  slug: "yandex-cloud"
+  address: 119021, г. Москва, р-н. Хамовники, ул. Льва Толстого, д. 16, помещ. 528
+  aliases: ["яндекс облако", "yandex cloud"]
+  revoke_article:
+  revoke_email:
+  web_site:
+  status: "draft"
+  checked_at: '2026-11-01'
+
+# # --- Банки, телеком, ритейл ---
+- inn: "7707083893"
+  name: "ПАО Сбербанк"
+  slug: "sber"
+  address: "117312, г. Москва, Академический р-н, ул. Вавилова, д. 19"
+  aliases: ["сбер", "sber", "сбербанк"]
+  revoke_article:
+  revoke_email:
+  web_site:
+  status: "draft"
+  checked_at: '2026-11-01'
+- inn: "7702070139"
+  name: "Банк ВТБ (ПАО)"
+  slug: "vtb"
+  address: "191144, г. Санкт-Петербург, Центральный р-н, Дегтярный пер, д. 11 литера а"
+  aliases: ["втб", "vtb"]
+  revoke_article:
+  revoke_email:
+  web_site:
+  status: "draft"
+  checked_at: '2026-11-01'
+- inn: "7728168971"
+  name: "АО «Альфа-Банк»"
+  slug: "alfa"
+  address: "107078, г. Москва, Красносельский р-н, ул. Каланчевская, д. 27"
+  aliases: ["альфа-банк", "alfa"]
+  revoke_article:
+  revoke_email:
+  web_site:
+  status: "draft"
+  checked_at: '2026-11-01'
+- inn: "7744001497"
+  name: "Банк ГПБ (АО) - Газпромбанк"
+  slug: "gpb"
+  address: "117420, г. Москва, р-н. Черемушки, ул. Намёткина, д. 16 к 1"
+  aliases: ["газпромбанк", "gpb"]
+  revoke_article:
+  revoke_email:
+  web_site:
+  status: "draft"
+  checked_at: '2026-11-01'
+- inn: "7710140679"
+  name: "АО «ТБанк»"
+  slug: "tbank"
+  address: "127287, г. Москва, Савеловский р-н, ул. 2-я Хуторская, д. 38А стр 26"
+  aliases: ["т-банк", "тинькофф", "tinkoff", "т-технологии"]
+  revoke_article:
+  revoke_email:
+  web_site:
+  status: "draft"
+  checked_at: '2026-11-01'
+- inn: "7740000076"
+  name: "ПАО «МТС»"
+  slug: "mts"
+  address: "109147, г. Москва, Таганский р-н, ул. Марксистская, д. 4 стр 1"
+  aliases: ["мтс", "mts"]
+  revoke_article:
+  revoke_email:
+  web_site:
+  status: "draft"
+  checked_at: '2026-11-01'
+- inn: "7707049388"
+  name: "ПАО «Ростелеком»"
+  slug: "rostelecom"
+  address: "191167, г. Санкт-Петербург, Центральный р-н, Синопская наб, д. 14 литера а"
+  aliases: ["ростелеком", "rostelecom", "rostelekom", "rt"]
+  revoke_article:
+  revoke_email:
+  web_site:
+  status: "draft"
+  checked_at: '2026-11-01'
+- inn: "7812014560"
+  name: "ПАО «МегаФон»"
+  slug: "megafon"
+  address: "127006, г. Москва, Тверской р-н, Оружейный пер, д. 41"
+  aliases: ["мегафон", "megafon"]
+  revoke_article:
+  revoke_email:
+  web_site:
+  status: "draft"
+  checked_at: '2026-11-01'
+- inn: "7713076301"
+  name: "ПАО «ВымпелКом»"
+  slug: "beeline"
+  address: "127083, г. Москва, Савеловский р-н, ул. 8 Марта, д. 10 стр 14"
+  aliases: ["билайн", "beeline", "вымпелком"]
+  revoke_article:
+  revoke_email:
+  web_site:
+  status: "draft"
+  checked_at: '2026-11-01'
+- inn: "7704217370"
+  name: "ООО «Интернет Решения»"
+  slug: "ozon"
+  address: "123112, г. Москва, Пресненский р-н, Пресненская наб, д. 10, помещ. I, ком 6"
+  aliases: ["ozon", "озон"]
+  revoke_article:
+  revoke_email:
+  web_site:
+  status: "draft"
+  checked_at: '2026-11-01'
+# - inn: "7721546864"
+#   name: "ООО «Вайлдберриз»"
+#   slug: "wildberries"
+#   address: "142181, Московская обл, г. Подольск, тер Индустриальный парк Коледино (д Коледино), д. 6 стр 1"
+#   aliases: ["wildberries", "вайлдберриз", "wb"]
+#   revoke_article:
+#   revoke_email:
+#   web_site:
+#   status: "draft"
+#   checked_at: '2026-11-01'
+# --- Tech-companies ---
+- inn: "9710089440"
+  name: "ООО «Авито Тех»"
+  slug: "avito-tech"
+  address: "125196, Москва, ул Лесная, д. 7, этаж 15, ком. 1"
+  aliases: ["Авито Тех", "Avito Tech", "avitotech", "авито", "avito"]
+  revoke_article: "https://avito.tech/privacy"
+  revoke_email: "events@avito.ru"
+  web_site: "https://avito.tech/"
+  status: "verified"
+  checked_at:
+- inn: "7713140469"
+  name: "АО «Лаборатория Касперского»"
+  slug: "kaspersky"
+  address: "125212, г. Москва, Войковский р-н, Ленинградское шоссе, д. 39А стр 2"
+  aliases: ["касперский", "kaspersky", "лаборатория касперского", "laboratoriya kasperskogo"]
+  revoke_article:
+  revoke_email:
+  web_site:
+  status: "draft"
+  checked_at: '2026-11-01'
